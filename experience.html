@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vinay Puppala | Experience</title>
+    <link rel="stylesheet" href="style.css">
+    
+    <!-- Guaranteed 3D Box Inline Styles -->
+    <style>
+        .bg-3d-container {
+            max-width: 1140px;
+            margin: 50px auto;
+            padding: 0 30px 80px 30px;
+        }
+        .grid-3d-layout {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 40px;
+        }
+        .box-3d-card {
+            background-color: #ffffff;
+            border-radius: 24px;
+            padding: 40px;
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            justify-content: flex-start;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.06), 0 1px 5px rgba(0, 0, 0, 0.02);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            border: 1px solid rgba(74, 46, 27, 0.05);
+        }
+        .box-3d-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 40px rgba(74, 46, 27, 0.12);
+        }
+        .box-3d-badge {
+            position: absolute;
+            top: 35px;
+            left: 35px;
+            width: 55px;
+            height: 55px;
+            background-color: #4A2E1B;
+            border-radius: 16px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            color: #ffffff;
+            box-shadow: 0 4px 12px rgba(74, 46, 27, 0.2);
+        }
+        .box-3d-title-block {
+            margin-left: 75px;
+            min-height: 55px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            margin-bottom: 25px;
+        }
+        .box-3d-title {
+            font-family: 'Playfair Display', 'Georgia', serif;
+            font-size: 1.7rem;
+            font-weight: 700;
+            color: #111111;
+            margin: 0;
+        }
+        .box-3d-subtitle {
+            color: #4A2E1B;
+            font-weight: 600;
+            font-family: sans-serif;
+            font-size: 0.95rem;
+            letter-spacing: 0.5px;
+            margin-top: 15px;
+            text-transform: uppercase;
+        }
+        .box-3d-text {
+            font-family: sans-serif;
+            font-size: 1rem;
+            line-height: 1.75;
+            color: #444444;
+            width: 100%;
+            margin: 0;
+            text-align: justify;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Moving Background Floating Objects -->
+    <div class="bg-orb orb-1"></div>
+    <div class="bg-orb orb-2"></div>
+    <div class="bg-orb orb-3"></div>
+
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <div class="logo">VP</div>
+        <div class="nav-links">
+            <a href="index.html">HOME</a>
+            <a href="background.html">BACKGROUND</a>
+            <a href="experience.html" class="active">EXPERIENCE</a>
+            <a href="inspiration.html">INSPIRATION</a> <!-- Updated Link -->
+        </div>
+    </nav>
+
+    <!-- Left-to-Right Scrolling Marquee Ticker -->
+    <div class="marquee-wrapper">
+        <div class="marquee-content">
+            <span>💡 DIGITAL MARKETER</span>
+            <span>📊 GROWTH STRATEGIST</span>
+            <span>📱 TECH OPERATIONS SPECIALIST</span>
+            <span>🚀 E-COMMERCE EXECUTIVE</span>
+            <span>💡 DIGITAL MARKETER</span>
+            <span>📊 GROWTH STRATEGIST</span>
+            <span>📱 TECH OPERATIONS SPECIALIST</span>
+            <span>🚀 E-COMMERCE EXECUTIVE</span>
+        </div>
+    </div>
+
+    <!-- Main 3D Experience Content Grid -->
+    <div class="bg-3d-container">
+        <div class="grid-3d-layout">
+            
+            <!-- Box 1: Phones4U -->
+            <div class="box-3d-card">
+                <div class="box-3d-badge">🚀</div>
+                <div class="box-3d-title-block">
+                    <h3 class="box-3d-title">E-commerce Executive</h3>
+                    <div class="box-3d-subtitle">Phones4U — Present </div>
+                </div>
+                
+                <p class="box-3d-text">
+                    Managing end-to-end e-commerce workflows including multi-channel product listings, stock updating, and inventory metrics verification, while executing targeted digital marketing asset management strategies to boost conversions, lead acquisition, and overall store performance. I work to optimize supply chain delivery updates, resolve high-priority processing bottlenecks to guarantee prompt customer order fulfillments, and leverage advanced spreadsheet analytics and data filters to audit platform conversion benchmarks and track top-selling products.
+                </p>
+            </div>
+
+            <!-- Box 2: Navata -->
+            <div class="box-3d-card">
+                <div class="box-3d-badge">🚛</div>
+                <div class="box-3d-title-block">
+                    <h3 class="box-3d-title">Operation Executive – Dispatch</h3>
+                    <div class="box-3d-subtitle">Navata Supply Chain & Road Transport — 1 Year Experience</div>
+                </div>
+                
+                <p class="box-3d-text">
+                    Coordinated the booking and delivery of consignments to ensure timely dispatch and strict adherence to delivery schedules, while executing transport planning by selecting optimal shipment modes based on timelines, cost-efficiency, and cargo type. I closely monitored consignment movements to provide real-time tracking updates to internal teams and external customers, managed door bookings, supervised vehicle loading and unloading operations at dispatch centers to maintain workflow efficiency, maintained accurate shipment records using MS Excel and internal logistics systems for data integrity, and collaborated across warehouse and customer service teams to ensure seamless logistics operations.
+                </p>
+            </div>
+
+        </div>
+    </div>
+
+</body>
+</html>

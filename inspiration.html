@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vinay Puppala | Inspiration</title>
+    <link rel="stylesheet" href="style.css">
+    
+    <!-- Clean, Blended 1-Box & Quote Dashboard Layout Styles -->
+    <style>
+        .bg-3d-container {
+            max-width: 900px;
+            margin: 50px auto;
+            padding: 0 30px 80px 30px;
+        }
+        .single-box-layout {
+            display: flex;
+            flex-direction: column;
+            gap: 30px;
+            align-items: center;
+        }
+        
+        /* Matching Soft White 3D Cards */
+        .box-3d-card, .quote-dashboard-box {
+            background-color: #ffffff;
+            border-radius: 24px;
+            padding: 40px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05), 0 1px 5px rgba(0, 0, 0, 0.02);
+            border: 1px solid rgba(74, 46, 27, 0.05);
+            width: 100%;
+            box-sizing: border-box;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .box-3d-card:hover, .quote-dashboard-box:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 12px 32px rgba(74, 46, 27, 0.06);
+        }
+        
+        .box-3d-badge {
+            position: absolute;
+            top: 35px;
+            left: 35px;
+            width: 55px;
+            height: 55px;
+            background-color: #4A2E1B;
+            border-radius: 16px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            color: #ffffff;
+            box-shadow: 0 4px 12px rgba(74, 46, 27, 0.2);
+        }
+        .box-3d-title-block {
+            margin-left: 75px;
+            min-height: 55px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            margin-bottom: 25px;
+        }
+        .box-3d-title {
+            font-family: 'Playfair Display', 'Georgia', serif;
+            font-size: 1.7rem;
+            font-weight: 700;
+            color: #111111;
+            margin: 0;
+        }
+        .box-3d-subtitle {
+            color: #4A2E1B;
+            font-weight: 600;
+            font-family: sans-serif;
+            font-size: 0.95rem;
+            letter-spacing: 0.5px;
+            margin-top: 12px; /* <-- Change this from 5px to 12px for a perfect little gap! */
+            text-transform: uppercase;
+        }
+        .box-3d-text {
+            font-family: sans-serif;
+            font-size: 1.05rem;
+            line-height: 1.8;
+            color: #444444;
+            width: 100%;
+            margin: 0;
+            text-align: justify;
+        }
+        
+        /* Quote Container Blended Style */
+        .quote-dashboard-box {
+            padding: 30px 40px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 20px;
+            text-align: center;
+        }
+        .quote-heading {
+            font-family: 'Playfair Display', 'Georgia', serif;
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: #4A2E1B; /* Matches your theme color instead of dark yellow */
+            margin: 0;
+            letter-spacing: 0.5px;
+        }
+        .quote-actions {
+            display: flex;
+            gap: 15px;
+            width: 100%;
+            justify-content: center;
+            max-width: 400px;
+        }
+        .quote-btn {
+            flex: 1;
+            padding: 12px 24px;
+            border-radius: 50px;
+            font-family: sans-serif;
+            font-size: 0.95rem;
+            font-weight: 600;
+            text-decoration: none;
+            text-align: center;
+            transition: all 0.2s ease;
+            box-sizing: border-box;
+        }
+        
+        /* Clean Theme-Synced Buttons */
+        .btn-uninstall {
+            background-color: transparent;
+            color: #777777;
+            border: 2px solid #dddddd;
+        }
+        .btn-uninstall:hover {
+            background-color: #f9f9f9;
+            color: #333333;
+            border-color: #bbbbbb;
+        }
+        .btn-update {
+            background: #4A2E1B;
+            color: #ffffff;
+            border: 1px solid #4A2E1B;
+            box-shadow: 0 4px 12px rgba(74, 46, 27, 0.15);
+        }
+        .btn-update:hover {
+            background: #5c3a22;
+            box-shadow: 0 6px 16px rgba(74, 46, 27, 0.25);
+        }
+        
+        /* Centered Profile Photo Styling */
+        .photo-wrapper {
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            margin-top: 10px;
+        }
+        .profile-img {
+            max-width: 420px;
+            width: 100%;
+            height: auto;
+            border-radius: 24px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.06);
+            border: 6px solid #ffffff;
+            transition: transform 0.3s ease;
+        }
+        .profile-img:hover {
+            transform: scale(1.02);
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Moving Background Floating Objects -->
+    <div class="bg-orb orb-1"></div>
+    <div class="bg-orb orb-2"></div>
+    <div class="bg-orb orb-3"></div>
+
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <div class="logo">VP</div>
+        <div class="nav-links">
+            <a href="index.html">HOME</a>
+            <a href="background.html">BACKGROUND</a>
+            <a href="experience.html">EXPERIENCE</a>
+            <a href="inspiration.html" class="active">INSPIRATION</a>
+        </div>
+    </nav>
+
+    <!-- Left-to-Right Scrolling Marquee Ticker -->
+    <div class="marquee-wrapper">
+        <div class="marquee-content">
+            <span>💡 DIGITAL MARKETER</span>
+            <span>📊 GROWTH STRATEGIST</span>
+            <span>📱 TECH OPERATIONS SPECIALIST</span>
+            <span>🚀 E-COMMERCE EXECUTIVE</span>
+            <span>💡 DIGITAL MARKETER</span>
+            <span>📊 GROWTH STRATEGIST</span>
+            <span>📱 TECH OPERATIONS SPECIALIST</span>
+            <span>🚀 E-COMMERCE EXECUTIVE</span>
+        </div>
+    </div>
+
+    <!-- Main Content Container -->
+    <div class="bg-3d-container">
+        <div class="single-box-layout">
+            
+            <!-- Unified Single Inspiration Box -->
+            <div class="box-3d-card" style="position: relative;">
+                <div class="box-3d-badge">💡</div>
+                <div class="box-3d-title-block">
+                    <h3 class="box-3d-title">Inspiration</h3>
+                    <div class="box-3d-subtitle">My Motivation & Vision</div>
+                </div>
+                
+                <p class="box-3d-text">
+                    I come from a humble background where financial struggles were a part of everyday life. Instead of seeing poverty as a limitation, I chose to make it my motivation. The challenges I faced taught me the value of hard work, patience, and determination. My dream is not only to improve my own life but also to create a better future for my family and generations to come. Every obstacle I encounter pushes me to learn new skills, gain knowledge, and grow stronger. I believe that success is not determined by where we start, but by the effort, dedication, and mindset we carry throughout our journey. With continuous learning, perseverance, and a willingness to work harder than yesterday, I am committed to building a successful future and reaching greater heights in life.
+                </p>
+            </div>
+
+            <!-- Blended White 3D Dashboard Container -->
+            <div class="quote-dashboard-box">
+                <h2 class="quote-heading">"Life has only two options"</h2>
+                <div class="quote-actions">
+                    <a href="#" class="quote-btn btn-uninstall">Uninstall</a>
+                    <a href="#" class="quote-btn btn-update">Update</a>
+                </div>
+            </div>
+
+            <!-- Centered Image Section -->
+            <div class="photo-wrapper">
+                <img src="image insper.jpeg" alt="Vinay Puppala Portrait" class="profile-img">
+            </div>
+
+        </div>
+    </div>
+
+</body>
+</html>
