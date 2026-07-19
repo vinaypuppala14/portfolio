@@ -600,8 +600,8 @@ body {
     bottom: auto !important;
     transform: none !important;
     margin: 0 auto 15px auto !important; /* Puts clean spacing under the symbol */
-    width: auto !important;
-    height: auto !important;
+    width: 70px !important;
+    height: 70px !important;
   }
 
   /* Fixes headings so they stay readable and unblocked */
