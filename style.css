@@ -547,8 +547,8 @@ body {
     align-items: center !important;
     gap: 12px !important;
     margin: 30px 20px 10px auto !important; /* Pushes it to the right side */
-    width: fit-content !important;
-    height: auto !important;
+    width: 35px !important;
+    height: 35px !important;
     left: auto !important;
     top: auto !important;
     right: auto !important;
@@ -558,8 +558,8 @@ body {
 
   /* Keep the icons correctly sized */
   a[href*="instagram"] img, a[href*="linkedin"] img, div[class*="social"] img {
-    width: 90px !important;
-    height: 90px !important;
+    width: 40px !important;
+    height: 40px !important;
     position: static !important;
     margin: 0 !important;
   }
@@ -605,8 +605,8 @@ body {
   }
 
 div[class*="badge"] img, span[class*="icon"] img, .card div:first-child img {
-    width: 45px !important;   
-    height: 45px !important;  
+    width: 52px !important;   
+    height: 52px !important;  
     object-fit: contain !important;
     display: block !important;
     margin: auto !important;
