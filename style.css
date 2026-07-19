@@ -579,48 +579,54 @@ body {
   .image-circle-container > div:nth-child(8), .image-circle-container > .circle:nth-of-type(7) { top: 142px !important; left: 0px !important; }      /* Center Left */
   .image-circle-container > div:nth-child(9), .image-circle-container > .circle:nth-of-type(8) { top: 40px !important; left: 35px !important; }      /* Top Left */
 
-  /* Move social links perfectly to the bottom-right corner */
-  .socials, 
-  div[class*="social"], 
-  footer [class*="social"] {
+    
+  /* Move social links naturally to the bottom right corner of the content */
+
+  a[href*="instagram"], a[href*="linkedin"], .socials, div[class*="social"] {
+    position: relative !important;
     display: flex !important;
     flex-direction: row !important;
     justify-content: flex-end !important;
     align-items: center !important;
-    gap: 15px !important;
-    width: 90% !important;
-    max-width: 360px !important;
-    margin: 30px 15px 20px auto !important; /* The 'auto' left margin pushes it to the right corner */
-    padding: 0 !important;
+    gap: 12px !important;
+    margin: 30px 20px 10px auto !important; /* Pushes it to the right side */
+    width: 35px !important;
+    height: 35px !important;
+    left: auto !important;
+    top: auto !important;
+
+    right: auto !important;
+
+    bottom: auto !important;
+
+    transform: none !important;
+
   }
 
-  /* Style the links inside the container */
-  .socials a, 
-  div[class*="social"] a {
-    display: flex !important;
-    align-items: center !important;
-    gap: 6px !important;
-    text-decoration: none !important;
-  }
 
-  /* Icon size adjustments */
-  .socials img, 
-  div[class*="social"] img,
-  .socials a img {
-    width: 24px !important;
-    height: 24px !important;
-    object-fit: contain !important;
-  }
 
-  /* Text label formatting next to icons */
-  .socials p, 
-  .socials span,
-  div[class*="social"] p,
-  div[class*="social"] span {
-    font-size: 0.85rem !important;
-    font-weight: 600 !important;
-    color: #555555 !important;
+  /* Keep the icons correctly sized */
+
+  a[href*="instagram"] img, a[href*="linkedin"] img, div[class*="social"] img {
+
+    width: 40px !important;
+
+    height: 40px !important;
+
+    position: static !important;
+
     margin: 0 !important;
+
+  }
+
+  
+
+  /* Hide text labels completely so only the icons show */
+
+  a[href*="instagram"] p, a[href*="linkedin"] p, a[href*="instagram"] span, a[href*="linkedin"] span {
+
+    display: none !important;
+
   }
 
 
