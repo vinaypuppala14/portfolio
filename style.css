@@ -540,7 +540,6 @@ body {
 
   /* 5. POSITION SOCIAL LOGOS: Anchor LinkedIn & Instagram to the bottom right corner exactly */
   .socials-container, div[class*="social"], .social-icon {
-    position: fixed !important;
     bottom: 20px !important;
     right: 20px !important;
     left: auto !important;
