@@ -452,13 +452,13 @@ body {
 
 
 
-* ==========================================================================
-   HOME PAGE ONLY - MOBILE RESPONSIVE FIX (PERFECT ALIGNMENT & SIZES)
+/* ==========================================================================
+   HOME PAGE ONLY - TOTAL MOBILE RESPONSIVE LAYOUT FIX
    ========================================================================== */
 @media screen and (max-width: 768px) {
   
-  /* 1. Reset main containers to give layout proper breathing room */
-  body, main, .hero-container, .main-layout {
+  /* FORCE STACKING: Breaks the narrow side-by-side split columns into a clean vertical line */
+  body, main, section, .hero-container, .main-layout, [class*="layout"] {
     display: flex !important;
     flex-direction: column !important;
     align-items: center !important;
@@ -466,88 +466,120 @@ body {
     text-align: center !important;
     width: 100% !important;
     max-width: 100% !important;
-    padding: 10px !important;
-    margin: 0 !important;
+    padding: 15px !important;
+    margin: 0 auto !important;
     box-sizing: border-box !important;
+    float: none !important;
   }
 
-  /* 2. Fix paragraph text alignment (Stops it from being squeezed narrow) */
-  .hero-container h1, .hero-container h2, .hero-container p, .main-layout p {
-    width: 92% !important;
-    max-width: 500px !important;
+  /* TEXT ALIGNMENT: Allows your headlines and stories to use the full width of the mobile screen */
+  .hero-container h1, 
+  .hero-container h2, 
+  .hero-container p, 
+  .main-layout p, 
+  div[class*="left"] h1, 
+  div[class*="left"] p,
+  main p {
+    width: 100% !important;
+    max-width: 100% !important;
+    text-align: center !important; /* Centers headline and story text */
     margin: 12px auto !important;
     line-height: 1.6 !important;
     font-size: 1.05rem !important;
   }
 
-  /* 3. Widen the core circle layout framework so items can spread out */
-  .image-circle-container {
+  /* Increase headline font sizes so they look prominent and balanced */
+  .hero-container h1, div[class*="left"] h1 {
+    font-size: 2.2rem !important;
+    font-weight: bold !important;
+    line-height: 1.2 !important;
+  }
+
+  .hero-container h2, div[class*="left"] h2 {
+    font-size: 1.4rem !important;
+    font-weight: 600 !important;
+    margin-bottom: 20px !important;
+  }
+
+  /* FIX THE SKILL GRID FRAMEWORK: Prevents the container from shrinking or pulling to the right */
+  .image-circle-container, .profile-wrapper, div[class*="right"] {
     position: relative !important;
     display: block !important;
     width: 360px !important; 
     height: 360px !important;
-    margin: 50px auto !important;
+    margin: 40px auto !important;
+    left: auto !important;
+    top: auto !important;
+    right: auto !important;
+    transform: none !important;
+    float: none !important;
     box-sizing: border-box !important;
   }
 
-  /* 4. Perfect sizing and depth for the centered profile picture */
+  /* PROFILE PICTURE SIZE & DEPTH */
   .image-circle-container > img:first-child,
   img[src*="profile"] {
     position: absolute !important;
-    width: 110px !important; 
-    height: 110px !important;
+    width: 120px !important; 
+    height: 120px !important;
     left: 50% !important;
     top: 50% !important;
     transform: translate(-50%, -50%) !important;
     border-radius: 50% !important;
     border: 3px solid #0056b3 !important;
-    z-index: 10 !important; /* Forces it over the clashing badges */
+    z-index: 10 !important; /* Keeps your image safely on top of other layers */
     margin: 0 !important;
+    box-shadow: 0px 4px 15px rgba(0,0,0,0.15);
   }
 
-  /* 5. Clean layout frames for the 8 skill badges */
-  .image-circle-container > div {
+  /* STABILIZE SKILL BADGES: Ensures they preserve their shapes and text positions */
+  .image-circle-container > div, .circle, .image-circle-container [class*="badge"] {
     position: absolute !important;
     width: 75px !important;
     height: 75px !important;
     margin: 0 !important;
+    transform: none !important;
     display: flex !important;
     flex-direction: column !important;
     align-items: center !important;
     justify-content: center !important;
     z-index: 5 !important;
+    background: #ffffff !important; /* Clean badge card backgrounds */
+    border-radius: 50% !important;
+    box-shadow: 0px 2px 8px rgba(0,0,0,0.1) !important;
   }
 
-  /* Correctly sizing the small inner skill illustration images */
-  .image-circle-container > div img {
-    width: 42px !important;
-    height: 42px !important;
+  /* Inner illustration image sizing */
+  .image-circle-container > div img, .circle img {
+    width: 38px !important;
+    height: 38px !important;
     object-fit: contain !important;
     margin: 0 auto !important;
     display: block !important;
   }
 
-  /* Format skill texts neatly underneath their icons */
-  .image-circle-container > div p {
-    font-size: 0.62rem !important;
+  /* Format skill labels neatly beneath their icons */
+  .image-circle-container > div p, .circle span {
+    font-size: 0.6rem !important;
     font-weight: bold !important;
-    margin: 4px 0 0 0 !important;
-    line-height: 1 !important;
+    margin: 3px 0 0 0 !important;
+    line-height: 1.1 !important;
     white-space: nowrap !important;
     text-align: center !important;
+    color: #333333 !important;
   }
 
-  /* 6. Spreads the skill badges out wide so they clear your face completely */
-  .image-circle-container > div:nth-child(2) { top: 0px !important; left: 142px !important; }      /* Top Center */
-  .image-circle-container > div:nth-child(3) { top: 40px !important; right: 35px !important; }     /* Top Right */
-  .image-circle-container > div:nth-child(4) { top: 142px !important; right: 0px !important; }     /* Center Right */
-  .image-circle-container > div:nth-child(5) { bottom: 40px !important; right: 35px !important; }  /* Bottom Right */
-  .image-circle-container > div:nth-child(6) { bottom: 0px !important; left: 142px !important; }   /* Bottom Center */
-  .image-circle-container > div:nth-child(7) { bottom: 40px !important; left: 35px !important; }   /* Bottom Left */
-  .image-circle-container > div:nth-child(8) { top: 142px !important; left: 0px !important; }      /* Center Left */
-  .image-circle-container > div:nth-child(9) { top: 40px !important; left: 35px !important; }      /* Top Left */
+  /* SPREAD THE BADGES OUT WIDER: Forces them out of the middle so they circle your face perfectly */
+  .image-circle-container > div:nth-child(2), .image-circle-container > .circle:nth-of-type(1) { top: 0px !important; left: 142px !important; }      /* Top Center */
+  .image-circle-container > div:nth-child(3), .image-circle-container > .circle:nth-of-type(2) { top: 40px !important; right: 35px !important; }     /* Top Right */
+  .image-circle-container > div:nth-child(4), .image-circle-container > .circle:nth-of-type(3) { top: 142px !important; right: 0px !important; }     /* Center Right */
+  .image-circle-container > div:nth-child(5), .image-circle-container > .circle:nth-of-type(4) { bottom: 40px !important; right: 35px !important; }  /* Bottom Right */
+  .image-circle-container > div:nth-child(6), .image-circle-container > .circle:nth-of-type(5) { bottom: 0px !important; left: 142px !important; }   /* Bottom Center */
+  .image-circle-container > div:nth-child(7), .image-circle-container > .circle:nth-of-type(6) { bottom: 40px !important; left: 35px !important; }   /* Bottom Left */
+  .image-circle-container > div:nth-child(8), .image-circle-container > .circle:nth-of-type(7) { top: 142px !important; left: 0px !important; }      /* Center Left */
+  .image-circle-container > div:nth-child(9), .image-circle-container > .circle:nth-of-type(8) { top: 40px !important; left: 35px !important; }      /* Top Left */
 
-  /* 7. Bottom-Right Side Social Placement (Content flow alignment) */
+  /* SOCIAL LINKS: Positions links naturally at the bottom-right of the layout */
   .socials, div[class*="social"] {
     position: relative !important;
     display: flex !important;
@@ -560,8 +592,8 @@ body {
   }
 
   .socials a img, div[class*="social"] a img, a[href*="instagram"] img, a[href*="linkedin"] img {
-    width: 48px !important;
-    height: 48px !important;
+    width: 46px !important;
+    height: 46px !important;
   }
   
   .socials p, div[class*="social"] p, a[href*="instagram"] p, a[href*="linkedin"] p {
