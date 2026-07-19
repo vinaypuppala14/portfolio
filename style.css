@@ -453,80 +453,107 @@ body {
 
 
 /* ==========================================================================
-   HOME PAGE ONLY - MOBILE RESPONSIVE FIX
+   HOME PAGE ONLY - MOBILE RESPONSIVE FIX (PERFECT SPACING)
    ========================================================================== */
 @media screen and (max-width: 768px) {
   
-  /* Reset home containers */
-  .hero-container, .main-layout {
+  /* Give the main introduction text proper readable width */
+  body, main, .hero-container, .main-layout {
     display: flex !important;
     flex-direction: column !important;
     align-items: center !important;
+    justify-content: flex-start !important;
     text-align: center !important;
     width: 100% !important;
-    padding: 15px !important;
+    max-width: 100% !important;
+    padding: 10px !important;
+    margin: 0 !important;
     box-sizing: border-box !important;
   }
 
-  /* Stabilize the core circle layout frame */
+  /* Fixes the text squeezing - allows paragraphs to expand beautifully */
+  .hero-container h1, .hero-container h2, .hero-container p, .main-layout p {
+    width: 92% !important;
+    max-width: 500px !important;
+    margin: 10px auto !important;
+    line-height: 1.6 !important;
+    font-size: 1.05rem !important;
+  }
+
+  .hero-container h2 {
+    font-size: 1.5rem !important;
+    font-weight: bold !important;
+  }
+
+  /* EXPAND THE CORE CIRCLE LAYOUT FRAME */
   .image-circle-container {
     position: relative !important;
     display: block !important;
-    width: 320px !important;
-    height: 320px !important;
-    margin: 40px auto !important;
+    width: 350px !important; /* Expanded framework to stop clustering */
+    height: 350px !important;
+    margin: 50px auto !important;
+    box-sizing: border-box !important;
   }
 
-  /* CENTER PROFILE PICTURE */
+  /* PERFECTLY CENTERED MAIN PROFILE PICTURE */
   .image-circle-container > img:first-child,
   img[src*="profile"] {
     position: absolute !important;
-    width: 120px !important;
-    height: 120px !important;
+    width: 110px !important; /* Tailored size so face isn't covered */
+    height: 110px !important;
     left: 50% !important;
     top: 50% !important;
     transform: translate(-50%, -50%) !important;
     border-radius: 50% !important;
     border: 3px solid #0056b3 !important;
-    z-index: 5 !important;
+    z-index: 10 !important;
+    margin: 0 !important;
+    box-shadow: 0px 4px 10px rgba(0,0,0,0.15);
   }
 
-  /* RE-POSITION SKILL BADGES IN A CIRCLE */
+  /* STABILIZE SKILL BADGE CONTAINERS */
   .image-circle-container > div {
     position: absolute !important;
-    width: 75px !important;
-    height: auto !important;
+    width: 70px !important;
+    height: 70px !important;
     margin: 0 !important;
     display: flex !important;
     flex-direction: column !important;
     align-items: center !important;
+    justify-content: center !important;
+    z-index: 5 !important;
   }
 
-  /* Scale Home Page Skill Illustrations Only */
+  /* Clean sizing for inner illustrations */
   .image-circle-container > div img {
-    width: 50px !important;
-    height: 50px !important;
+    width: 42px !important;
+    height: 42px !important;
     object-fit: contain !important;
     margin: 0 auto !important;
+    display: block !important;
   }
 
+  /* Skill titles under icons */
   .image-circle-container > div p {
-    font-size: 0.65rem !important;
-    margin-top: 2px !important;
+    font-size: 0.62rem !important;
+    font-weight: bold !important;
+    margin: 4px 0 0 0 !important;
+    line-height: 1 !important;
     white-space: nowrap !important;
+    text-align: center !important;
   }
 
-  /* Symmetrical placement around face */
-  .image-circle-container > div:nth-child(2) { top: 0px !important; left: 122px !important; }
-  .image-circle-container > div:nth-child(3) { top: 35px !important; right: 15px !important; }
-  .image-circle-container > div:nth-child(4) { top: 122px !important; right: 0px !important; }
-  .image-circle-container > div:nth-child(5) { bottom: 35px !important; right: 15px !important; }
-  .image-circle-container > div:nth-child(6) { bottom: 0px !important; left: 122px !important; }
-  .image-circle-container > div:nth-child(7) { bottom: 35px !important; left: 15px !important; }
-  .image-circle-container > div:nth-child(8) { top: 122px !important; left: 0px !important; }
-  .image-circle-container > div:nth-child(9) { top: 35px !important; left: 15px !important; }
+  /* WIDER COMPASS POSITIONS (Spreads items out cleanly around your face) */
+  .image-circle-container > div:nth-child(2) { top: 0px !important; left: 140px !important; }      /* Top Center */
+  .image-circle-container > div:nth-child(3) { top: 40px !important; right: 35px !important; }     /* Top Right */
+  .image-circle-container > div:nth-child(4) { top: 140px !important; right: 0px !important; }     /* Center Right */
+  .image-circle-container > div:nth-child(5) { bottom: 40px !important; right: 35px !important; }  /* Bottom Right */
+  .image-circle-container > div:nth-child(6) { bottom: 0px !important; left: 140px !important; }   /* Bottom Center */
+  .image-circle-container > div:nth-child(7) { bottom: 40px !important; left: 35px !important; }   /* Bottom Left */
+  .image-circle-container > div:nth-child(8) { top: 140px !important; left: 0px !important; }      /* Center Left */
+  .image-circle-container > div:nth-child(9) { top: 40px !important; left: 35px !important; }      /* Top Left */
 
-  /* Natural Right-Down Corner Positioning for Social Logos */
+  /* Right-Down Side Social Placement */
   .socials, div[class*="social"] {
     position: relative !important;
     display: flex !important;
@@ -534,21 +561,20 @@ body {
     justify-content: flex-end !important;
     align-items: center !important;
     gap: 12px !important;
-    margin: 30px 20px 10px auto !important;
+    margin: 40px 20px 20px auto !important;
     width: fit-content !important;
-    height: auto !important;
   }
 
-  /* Set Home Social Icons to a visible, increased scale */
   .socials a img, div[class*="social"] a img, a[href*="instagram"] img, a[href*="linkedin"] img {
-    width: 50px !important;
-    height: 50px !important;
+    width: 48px !important;
+    height: 48px !important;
   }
   
   .socials p, div[class*="social"] p, a[href*="instagram"] p, a[href*="linkedin"] p {
     display: none !important;
   }
 }
+
 
 
 
