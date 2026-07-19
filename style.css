@@ -450,40 +450,35 @@ body {
 
 
 
-/* TOTAL MOBILE RESPONSIVE FIX */
+
+
+/* ==========================================================================
+   HOME PAGE ONLY - MOBILE RESPONSIVE FIX
+   ========================================================================== */
 @media screen and (max-width: 768px) {
   
-  /* 1. Reset main containers to keep items centered */
-  body, main, section, .hero-container, .main-layout {
+  /* Reset home containers */
+  .hero-container, .main-layout {
     display: flex !important;
     flex-direction: column !important;
     align-items: center !important;
-    justify-content: flex-start !important;
     text-align: center !important;
     width: 100% !important;
-    max-width: 100% !important;
     padding: 15px !important;
-    margin: 0 !important;
     box-sizing: border-box !important;
-    position: static !important;
   }
 
-  /* 2. Re-stabilize the core circle layout frame */
-  .image-circle-container, .profile-wrapper, div[class*="image"], div[class*="right"] {
+  /* Stabilize the core circle layout frame */
+  .image-circle-container {
     position: relative !important;
     display: block !important;
     width: 320px !important;
     height: 320px !important;
     margin: 40px auto !important;
-    left: auto !important;
-    top: auto !important;
-    right: auto !important;
-    transform: none !important;
   }
 
-  /* 3. CENTER PROFILE PICTURE: Perfectly centered in the middle of the circle cluster */
-  .image-circle-container > img:first-child, 
-  .profile-wrapper > img[src*="profile"], 
+  /* CENTER PROFILE PICTURE */
+  .image-circle-container > img:first-child,
   img[src*="profile"] {
     position: absolute !important;
     width: 120px !important;
@@ -494,166 +489,140 @@ body {
     border-radius: 50% !important;
     border: 3px solid #0056b3 !important;
     z-index: 5 !important;
-    margin: 0 !important;
   }
 
-  /* 4. RE-POSITION SKILL BADGES: Cleanly distribute them symmetrically around your face */
-  .image-circle-container > div, .circle, [class*="badge"] {
+  /* RE-POSITION SKILL BADGES IN A CIRCLE */
+  .image-circle-container > div {
     position: absolute !important;
     width: 75px !important;
     height: auto !important;
     margin: 0 !important;
-    transform: none !important;
     display: flex !important;
     flex-direction: column !important;
     align-items: center !important;
   }
 
-  /* Resize the small inner illustrations so they match the layout dimensions */
-  .image-circle-container > div img, .circle img, [class*="badge"] img {
+  /* Scale Home Page Skill Illustrations Only */
+  .image-circle-container > div img {
     width: 50px !important;
     height: 50px !important;
     object-fit: contain !important;
-    position: relative !important;
-    left: auto !important;
-    top: auto !important;
     margin: 0 auto !important;
   }
 
-  .image-circle-container > div p, .circle span, [class*="badge"] p {
+  .image-circle-container > div p {
     font-size: 0.65rem !important;
     margin-top: 2px !important;
-    line-height: 1 !important;
     white-space: nowrap !important;
   }
 
-  /* Exact positions for the 8 skill badges surrounding your face */
-  .image-circle-container > div:nth-child(2) { top: 0px !important; left: 122px !important; }      /* Top Center */
-  .image-circle-container > div:nth-child(3) { top: 35px !important; right: 15px !important; }     /* Top Right */
-  .image-circle-container > div:nth-child(4) { top: 122px !important; right: 0px !important; }     /* Center Right */
-  .image-circle-container > div:nth-child(5) { bottom: 35px !important; right: 15px !important; }  /* Bottom Right */
-  .image-circle-container > div:nth-child(6) { bottom: 0px !important; left: 122px !important; }   /* Bottom Center */
-  .image-circle-container > div:nth-child(7) { bottom: 35px !important; left: 15px !important; }   /* Bottom Left */
-  .image-circle-container > div:nth-child(8) { top: 122px !important; left: 0px !important; }      /* Center Left */
-  .image-circle-container > div:nth-child(9) { top: 35px !important; left: 15px !important; }      /* Top Left */
+  /* Symmetrical placement around face */
+  .image-circle-container > div:nth-child(2) { top: 0px !important; left: 122px !important; }
+  .image-circle-container > div:nth-child(3) { top: 35px !important; right: 15px !important; }
+  .image-circle-container > div:nth-child(4) { top: 122px !important; right: 0px !important; }
+  .image-circle-container > div:nth-child(5) { bottom: 35px !important; right: 15px !important; }
+  .image-circle-container > div:nth-child(6) { bottom: 0px !important; left: 122px !important; }
+  .image-circle-container > div:nth-child(7) { bottom: 35px !important; left: 15px !important; }
+  .image-circle-container > div:nth-child(8) { top: 122px !important; left: 0px !important; }
+  .image-circle-container > div:nth-child(9) { top: 35px !important; left: 15px !important; }
 
-
-/* Move social links naturally to the bottom right corner of the content */
-  a[href*="instagram"], a[href*="linkedin"], .socials, div[class*="social"] {
+  /* Natural Right-Down Corner Positioning for Social Logos */
+  .socials, div[class*="social"] {
     position: relative !important;
     display: flex !important;
     flex-direction: row !important;
     justify-content: flex-end !important;
     align-items: center !important;
     gap: 12px !important;
-    margin: 30px 20px 10px auto !important; /* Pushes it to the right side */
-    width: 35px !important;
-    height: 35px !important;
-    left: auto !important;
+    margin: 30px 20px 10px auto !important;
+    width: fit-content !important;
+    height: auto !important;
+  }
+
+  /* Set Home Social Icons to a visible, increased scale */
+  .socials a img, div[class*="social"] a img, a[href*="instagram"] img, a[href*="linkedin"] img {
+    width: 50px !important;
+    height: 50px !important;
+  }
+  
+  .socials p, div[class*="social"] p, a[href*="instagram"] p, a[href*="linkedin"] p {
+    display: none !important;
+  }
+}
+
+
+
+
+
+/* ==========================================================================
+   BACKGROUND PAGE ONLY - MOBILE RESPONSIVE FIX
+   ========================================================================== */
+@media screen and (max-width: 768px) {
+
+  /* Clean up text blocks and center container layout */
+  .card, [class*="card-container"], [class*="story-box"] {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important; 
+    justify-content: flex-start !important;
+    text-align: center !important;
+    padding: 25px 20px !important;
+    margin: 20px auto !important;
+    width: 90% !important;
+    box-sizing: border-box !important;
+  }
+
+  /* Clean up Title blocks */
+  .card h2, .card h3, [class*="card-title"] {
+    position: relative !important;
+    display: block !important;
+    width: 100% !important;
+    text-align: center !important;
+    font-size: 1.6rem !important;
+    line-height: 1.3 !important;
+    margin: 0 auto 15px auto !important;
+  }
+
+  /* Fix background copy paragraphs with uniform word spacing */
+  .card p, [class*="card-text"] {
+    text-align: center !important; 
+    text-justify: none !important;
+    word-spacing: normal !important;
+    letter-spacing: normal !important;
+    line-height: 1.6 !important;
+    font-size: 1rem !important;
+    margin: 0 auto !important;
+    width: 100% !important;
+  }
+
+  /* Style the brown outer badge box natively */
+  div[class*="badge"], span[class*="icon"], .card > div:first-child {
+    position: relative !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    margin: 0 auto 15px auto !important; 
+    width: 75px !important;   /* Brown outer container box size */
+    height: 75px !important;  /* Brown outer container box size */
     top: auto !important;
-    right: auto !important;
-    bottom: auto !important;
+    left: auto !important;
     transform: none !important;
   }
 
-  /* Keep the icons correctly sized */
-  a[href*="instagram"] img, a[href*="linkedin"] img, div[class*="social"] img {
-    width: 40px !important;
-    height: 40px !important;
-    position: static !important;
-    margin: 0 !important;
+  /* SPECIFIC TARGET FOR THE LEAF & HOUSE IMAGE INSIDE THE BADGE BOX */
+  .card div:first-child img,
+  div[class*="badge"] img,
+  span[class*="icon"] img,
+  .card div img {
+    width: 50px !important;   /* Force the inner leaf image size up */
+    height: 50px !important;  /* Force the inner leaf image size up */
+    min-width: 50px !important;
+    min-height: 50px !important;
+    max-width: 50px !important;
+    max-height: 50px !important;
+    object-fit: contain !important;
+    display: block !important;
+    margin: auto !important;
+    padding: 0 !important;
   }
-  
-  /* Hide text labels completely so only the icons show */
-  a[href*="instagram"] p, a[href*="linkedin"] p, a[href*="instagram"] span, a[href*="linkedin"] span {
-    display: none !important;
-  }
-
-
-
-
-
-
-
-
-
-    /* --- BACKGROUND PAGE MOBILE VIEW FIX --- */
-
-/* Fixes the card wrappers to align everything nicely */
-.card, [class*="card-container"], [class*="story-box"] {
-  display: flex !important;
-  flex-direction: column !important;
-  align-items: center !important; 
-  justify-content: flex-start !important;
-  text-align: center !important;
-  padding: 25px 20px !important;
-  margin: 20px auto !important;
-  width: 90% !important;
-  box-sizing: border-box !important;
 }
-
-/* UNTANGLE THE SYMBOLS: Style ONLY the brown outer container box */
-div[class*="badge"], span[class*="icon"], .card > div:first-child {
-  position: relative !important;
-  display: flex !important;
-  align-items: center !important;
-  justify-content: center !important;
-  top: auto !important;
-  left: auto !important;
-  right: auto !important;
-  bottom: auto !important;
-  transform: none !important;
-  margin: 0 auto 15px auto !important; 
-  width: 70px !important; /* Outer container box width */
-  height: 70px !important; /* Outer container box height */
-}
-
-/* ULTIMATE OVERRIDE FOR THE INSIDE SYMBOL IMAGE */
-.card div img,
-div[class*="badge"] img, 
-span[class*="icon"] img,
-.card > div:first-child img {
-  width: 48px !important;   
-  height: 48px !important;  
-  min-width: 48px !important;
-  min-height: 48px !important;
-  max-width: 48px !important;
-  max-height: 48px !important;
-  object-fit: contain !important;
-  display: block !important;
-  margin: auto !important;
-  padding: 0 !important;
-}
-  
-/* Fixes headings so they stay readable and unblocked */
-.card h2, .card h3, [class*="card-title"] {
-  position: relative !important;
-  display: block !important;
-  width: 100% !important;
-  text-align: center !important;
-  font-size: 1.6rem !important;
-  line-height: 1.3 !important;
-  margin: 0 auto 15px auto !important;
-  top: auto !important;
-  left: auto !important;
-  transform: none !important;
-}
-
-/* Fixes paragraph layout and removes messy gaps between sentences */
-.card p, [class*="card-text"] {
-  text-align: center !important; 
-  text-justify: none !important;
-  word-spacing: normal !important;
-  letter-spacing: normal !important;
-  line-height: 1.6 !important;
-  font-size: 1rem !important;
-  margin: 0 auto !important;
-  width: 100% !important;
-}
-
-
-
-
-
-
-   
