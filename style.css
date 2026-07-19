@@ -575,75 +575,85 @@ body {
 
 
 
-    /* --- BACKGROUND PAGE MOBLE VIEW FIX --- */
 
-  /* Fixes the card wrappers to align everything nicely */
-  .card, [class*="card-container"], [class*="story-box"] {
-    display: flex !important;
-    flex-direction: column !important;
-    align-items: center !important; /* Centers layout content column */
-    justify-content: flex-start !important;
-    text-align: center !important;
-    padding: 25px 20px !important;
-    margin: 20px auto !important;
-    width: 90% !important;
-    box-sizing: border-box !important;
-  }
 
-  /* UNTANGLE THE SYMBOLS: Moves the leaf/house badge above the headings */
-  div[class*="badge"], span[class*="icon"], .card img, .card div:first-child {
-    position: relative !important;
-    display: inline-block !important;
-    top: auto !important;
-    left: auto !important;
-    right: auto !important;
-    bottom: auto !important;
-    transform: none !important;
-    margin: 0 auto 15px auto !important; /* Puts clean spacing under the symbol */
-    width: 60px !important;
-    height: 60px !important;
-  }
+    /* --- BACKGROUND PAGE MOBILE VIEW FIX --- */
 
-/* ULTIMATE OVERRIDE FOR THE IMAGE INSIDE THE BADGE BOX */
-  .card div[style*="background"] img, 
-  div[class*="badge"] img, 
-  .card > div:first-child img,
-  .card img:not([src*="profile"]) {
-    width: 45px !important;   
-    height: 45px !important;  
-    min-width: 45px !important;
-    min-height: 45px !important;
-    max-width: 45px !important;
-    max-height: 45px !important;
-    object-fit: contain !important;
-    display: block !important;
-    margin: auto !important;
-    padding: 0 !important;
-  }
+/* Fixes the card wrappers to align everything nicely */
+.card, [class*="card-container"], [class*="story-box"] {
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: center !important; 
+  justify-content: flex-start !important;
+  text-align: center !important;
+  padding: 25px 20px !important;
+  margin: 20px auto !important;
+  width: 90% !important;
+  box-sizing: border-box !important;
+}
 
-    
-  /* Fixes headings so they stay readable and unblocked */
-  .card h2, .card h3, [class*="card-title"] {
-    position: relative !important;
-    display: block !important;
-    width: 100% !important;
-    text-align: center !important;
-    font-size: 1.6rem !important;
-    line-height: 1.3 !important;
-    margin: 0 auto 15px auto !important;
-    top: auto !important;
-    left: auto !important;
-    transform: none !important;
-  }
+/* UNTANGLE THE SYMBOLS: Style ONLY the brown outer container box */
+div[class*="badge"], span[class*="icon"], .card > div:first-child {
+  position: relative !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  top: auto !important;
+  left: auto !important;
+  right: auto !important;
+  bottom: auto !important;
+  transform: none !important;
+  margin: 0 auto 15px auto !important; 
+  width: 70px !important; /* Outer container box width */
+  height: 70px !important; /* Outer container box height */
+}
 
-  /* Fixes paragraph layout and removes messy gaps between sentences */
-  .card p, [class*="card-text"] {
-    text-align: center !important; /* Centers the story text text naturally */
-    text-justify: none !important;
-    word-spacing: normal !important;
-    letter-spacing: normal !important;
-    line-height: 1.6 !important;
-    font-size: 1rem !important;
-    margin: 0 auto !important;
-    width: 100% !important;
-  }
+/* ULTIMATE OVERRIDE FOR THE INSIDE SYMBOL IMAGE */
+.card div img,
+div[class*="badge"] img, 
+span[class*="icon"] img,
+.card > div:first-child img {
+  width: 48px !important;   
+  height: 48px !important;  
+  min-width: 48px !important;
+  min-height: 48px !important;
+  max-width: 48px !important;
+  max-height: 48px !important;
+  object-fit: contain !important;
+  display: block !important;
+  margin: auto !important;
+  padding: 0 !important;
+}
+  
+/* Fixes headings so they stay readable and unblocked */
+.card h2, .card h3, [class*="card-title"] {
+  position: relative !important;
+  display: block !important;
+  width: 100% !important;
+  text-align: center !important;
+  font-size: 1.6rem !important;
+  line-height: 1.3 !important;
+  margin: 0 auto 15px auto !important;
+  top: auto !important;
+  left: auto !important;
+  transform: none !important;
+}
+
+/* Fixes paragraph layout and removes messy gaps between sentences */
+.card p, [class*="card-text"] {
+  text-align: center !important; 
+  text-justify: none !important;
+  word-spacing: normal !important;
+  letter-spacing: normal !important;
+  line-height: 1.6 !important;
+  font-size: 1rem !important;
+  margin: 0 auto !important;
+  width: 100% !important;
+}
+
+
+
+
+
+
+   
