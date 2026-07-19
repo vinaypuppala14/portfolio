@@ -554,17 +554,6 @@ body {
     transform: none !important;
   }
 
-  /* Fix size and look of the sticky social icons */
-  a[href*="instagram"], a[href*="linkedin"], .socials-container a {
-    position: relative !important;
-    display: inline-block !important;
-    margin: 0 !important;
-    top: auto !important;
-    left: auto !important;
-    width: 40px !important;
-    height: 40px !important;
-  }
-
   a[href*="instagram"] img, a[href*="linkedin"] img, .socials-container img {
     width: 40px !important;
     height: 40px !important;
