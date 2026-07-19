@@ -604,19 +604,21 @@ body {
     height: 60px !important;
   }
 
-/* FORCE IMAGE INSIDE THE BADGE TO SCALE UP */
-  .card div:first-child img, 
+/* ULTIMATE OVERRIDE FOR THE IMAGE INSIDE THE BADGE BOX */
+  .card div[style*="background"] img, 
   div[class*="badge"] img, 
-  span[class*="icon"] img,
-  .card-container img,
-  .card img {
-    width: 60px !important;   
-    height: 60px !important;  
-    max-width: 60px !important;
-    max-height: 60px !important;
+  .card > div:first-child img,
+  .card img:not([src*="profile"]) {
+    width: 45px !important;   
+    height: 45px !important;  
+    min-width: 45px !important;
+    min-height: 45px !important;
+    max-width: 45px !important;
+    max-height: 45px !important;
     object-fit: contain !important;
     display: block !important;
     margin: auto !important;
+    padding: 0 !important;
   }
 
     
