@@ -696,19 +696,20 @@ body {
 
 
 
-    
-@media screen and (max-width: 768px) {
-            /* Force the card to be centered and full width */
+
+    @media screen and (max-width: 768px) {
+            /* 1. INCREASED BOX SIZE: Changed width to 94% and increased padding to make it spacious */
             .box-3d-card {
                 display: flex !important;
                 flex-direction: column !important;
                 align-items: center !important;
                 justify-content: center !important;
                 text-align: center !important;
-                padding: 30px 20px !important;
-                margin: 20px auto !important;
-                width: 90% !important;
+                padding: 35px 24px !important; /* More padding inside the box */
+                margin: 25px auto !important;
+                width: 94% !important; /* Spreads the card wider across the mobile screen */
                 box-sizing: border-box !important;
+                border-radius: 24px !important;
             }
 
             /* Force the badge into the center */
@@ -717,24 +718,42 @@ body {
                 top: 0 !important;
                 left: 0 !important;
                 margin: 0 auto 20px auto !important;
+                width: 75px !important;   /* Matches Background Page badge size */
+                height: 75px !important;  
+                font-size: 2rem !important;
             }
 
             /* Remove the left margin that is pushing the title off-center */
             .box-3d-title-block {
                 margin-left: 0 !important;
-                text-align: center !important;
+                margin-bottom: 22px !important;
                 width: 100% !important;
-            }
-
-            /* Center the title and subtitle */
-            .box-3d-title, .box-3d-subtitle {
                 text-align: center !important;
             }
 
-            /* Fix the text gaps */
+            /* Center the title and subtitle with slightly better line-height */
+            .box-3d-title {
+                text-align: center !important;
+                font-size: 1.75rem !important;
+                line-height: 1.3 !important;
+            }
+
+            .box-3d-subtitle {
+                text-align: center !important;
+                font-size: 0.95rem !important;
+                margin-top: 10px !important;
+            }
+
+            /* 2. TEXT ALIGNMENT: Clean line wrapping with comfortable reading spacing */
             .box-3d-text {
                 text-align: center !important;
+                text-justify: inter-word !important;
+                word-break: keep-all !important;
                 word-spacing: normal !important;
-                text-justify: none !important;
+                letter-spacing: normal !important;
+                line-height: 1.65 !important;
+                font-size: 1.02rem !important;
+                width: 100% !important;
             }
         }
+    
