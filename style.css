@@ -692,4 +692,49 @@ body {
 
 
 
+
+
+
+
     
+@media screen and (max-width: 768px) {
+            /* Force the card to be centered and full width */
+            .box-3d-card {
+                display: flex !important;
+                flex-direction: column !important;
+                align-items: center !important;
+                justify-content: center !important;
+                text-align: center !important;
+                padding: 30px 20px !important;
+                margin: 20px auto !important;
+                width: 90% !important;
+                box-sizing: border-box !important;
+            }
+
+            /* Force the badge into the center */
+            .box-3d-badge {
+                position: relative !important;
+                top: 0 !important;
+                left: 0 !important;
+                margin: 0 auto 20px auto !important;
+            }
+
+            /* Remove the left margin that is pushing the title off-center */
+            .box-3d-title-block {
+                margin-left: 0 !important;
+                text-align: center !important;
+                width: 100% !important;
+            }
+
+            /* Center the title and subtitle */
+            .box-3d-title, .box-3d-subtitle {
+                text-align: center !important;
+            }
+
+            /* Fix the text gaps */
+            .box-3d-text {
+                text-align: center !important;
+                word-spacing: normal !important;
+                text-justify: none !important;
+            }
+        }
