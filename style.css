@@ -687,3 +687,95 @@ body {
     padding: 0 !important;
   }
 }
+
+
+
+/* ==========================================================================
+     EXPERIENCE PAGE ONLY - MOBILE RESPONSIVE FIX
+     ========================================================================== */
+
+  /* 1. CONTAINER CARD: Matches the clean size and padding of the background page */
+  .experience-card, [class*="experience-box"], .card.experience {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important; 
+    justify-content: flex-start !important;
+    text-align: center !important;
+    padding: 30px 22px !important;
+    margin: 25px auto !important;
+    width: 94% !important; 
+    max-width: 480px !important;
+    box-sizing: border-box !important;
+    border-radius: 24px !important;
+  }
+
+  /* 2. HEADLINE & SUBTITLE: Centers text and lets headlines breathe without breaking early */
+  .experience-card h2, 
+  .experience-card h3, 
+  [class*="experience-title"],
+  .experience-card [class*="company"] {
+    position: relative !important;
+    display: block !important;
+    width: 100% !important;
+    text-align: center !important;
+    line-height: 1.3 !important;
+    margin: 0 auto !important;
+  }
+
+  .experience-card h2, [class*="experience-title"] {
+    font-size: 1.75rem !important;
+    font-weight: bold !important;
+    margin-bottom: 8px !important;
+  }
+
+  .experience-card h3, .experience-card [class*="company"] {
+    font-size: 1rem !important;
+    text-transform: uppercase !important;
+    letter-spacing: 1px !important;
+    margin-bottom: 18px !important;
+  }
+
+  /* 3. TEXT ALIGNMENT: Fixes the awkward gaps between words completely */
+  .experience-card p, [class*="experience-text"] {
+    text-align: center !important; 
+    text-justify: inter-word !important;
+    word-break: keep-all !important;
+    word-spacing: normal !important; /* Forces normal, clean word spacing */
+    letter-spacing: normal !important;
+    line-height: 1.65 !important;
+    font-size: 1.02rem !important;
+    margin: 0 auto !important;
+    width: 100% !important;
+    color: #444444 !important;
+  }
+
+  /* 4. BROWN BADGE BOX: Perfect alignment */
+  .experience-card > div:first-child, 
+  .experience-card [class*="badge"] {
+    position: relative !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    margin: 0 auto 15px auto !important; 
+    width: 75px !important;   
+    height: 75px !important;  
+    top: auto !important;
+    left: auto !important;
+    transform: none !important;
+  }
+
+  /* 5. ROCKET SYMBOL SIZE: Forces the small rocket image up to a matching 50px */
+  .experience-card div:first-child img,
+  .experience-card [class*="badge"] img,
+  .experience-card div img {
+    width: 50px !important;   
+    height: 50px !important;  
+    min-width: 50px !important;
+    min-height: 50px !important;
+    max-width: 50px !important;
+    max-height: 50px !important;
+    object-fit: contain !important;
+    display: block !important;
+    margin: auto !important;
+    padding: 0 !important;
+  }
