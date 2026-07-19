@@ -447,10 +447,10 @@ body {
 
 
 
-/* FINAL COMPLETE MOBILE RESPONSIVE FIX */
+/* TOTAL MOBILE RESPONSIVE FIX */
 @media screen and (max-width: 768px) {
   
-  /* 1. Reset the global structure to stack neatly */
+  /* 1. Reset main containers to keep items centered */
   body, main, section, .hero-container, .main-layout {
     display: flex !important;
     flex-direction: column !important;
@@ -465,109 +465,115 @@ body {
     position: static !important;
   }
 
-  /* 2. Format the layout text areas */
-  h1, h2, .hero-title {
-    font-size: 2.2rem !important;
-    line-height: 1.2 !important;
-    margin: 10px auto !important;
-  }
-
-  p, .description {
-    width: 100% !important;
-    max-width: 90% !important;
-    margin: 15px auto !important;
-    font-size: 1.05rem !important;
-    line-height: 1.6 !important;
-    text-align: center !important;
-    position: relative !important;
-  }
-
-  /* 3. FIX SOCIAL ICONS: Remove them from text, position them cleanly */
-  a[href*="instagram"], a[href*="linkedin"], .social-icon, .socials {
-    position: relative !important;
-    display: inline-block !important;
-    top: auto !important;
-    left: auto !important;
-    right: auto !important;
-    bottom: auto !important;
-    transform: none !important;
-    margin: 15px 10px !important;
-    z-index: 10 !important;
-  }
-
-  /* Container wrapper to move social icons down below the button/text */
-  .socials-container, div[class*="social"] {
-    position: relative !important;
-    display: flex !important;
-    justify-content: center !important;
-    align-items: center !important;
-    width: 100% !important;
-    margin-top: 10px !important;
-    top: auto !important;
-    left: auto !important;
-  }
-
-  /* 4. FIX IMAGES AND SKILL BADGES: Clean, spaced-out grid structure */
+  /* 2. Re-stabilize the core circle layout frame */
   .image-circle-container, .profile-wrapper, div[class*="image"], div[class*="right"] {
     position: relative !important;
-    display: flex !important;
-    flex-wrap: wrap !important;
-    flex-direction: row !important;
-    justify-content: center !important;
-    align-items: center !important;
-    gap: 20px !important;
-    width: 100% !important;
-    max-width: 100% !important;
-    top: auto !important;
+    display: block !important;
+    width: 320px !important;
+    height: 320px !important;
+    margin: 40px auto !important;
     left: auto !important;
+    top: auto !important;
     right: auto !important;
     transform: none !important;
-    margin: 30px auto !important;
-    height: auto !important;
   }
 
-  /* Force all floating item elements into a regular grid flow */
+  /* 3. CENTER PROFILE PICTURE: Perfectly centered in the middle of the circle cluster */
+  .image-circle-container > img:first-child, 
+  .profile-wrapper > img[src*="profile"], 
+  img[src*="profile"] {
+    position: absolute !important;
+    width: 120px !important;
+    height: 120px !important;
+    left: 50% !important;
+    top: 50% !important;
+    transform: translate(-50%, -50%) !important;
+    border-radius: 50% !important;
+    border: 3px solid #0056b3 !important;
+    z-index: 5 !important;
+    margin: 0 !important;
+  }
+
+  /* 4. RE-POSITION SKILL BADGES: Cleanly distribute them symmetrically around your face */
   .image-circle-container > div, .circle, [class*="badge"] {
-    position: relative !important;
-    top: auto !important;
-    left: auto !important;
-    right: auto !important;
-    bottom: auto !important;
+    position: absolute !important;
+    width: 75px !important;
+    height: auto !important;
+    margin: 0 !important;
     transform: none !important;
-    margin: 10px !important;
     display: flex !important;
     flex-direction: column !important;
     align-items: center !important;
-    width: 110px !important; /* Perfect square boundaries for skills */
-    height: auto !important;
   }
 
-  /* Keep all images inside the grid perfectly sized and structured */
-  img, svg {
+  /* Resize the small inner illustrations so they match the layout dimensions */
+  .image-circle-container > div img, .circle img, [class*="badge"] img {
+    width: 50px !important;
+    height: 50px !important;
+    object-fit: contain !important;
     position: relative !important;
-    display: block !important;
-    margin: 0 auto 5px auto !important;
+    left: auto !important;
+    top: auto !important;
+    margin: 0 auto !important;
+  }
+
+  .image-circle-container > div p, .circle span, [class*="badge"] p {
+    font-size: 0.65rem !important;
+    margin-top: 2px !important;
+    line-height: 1 !important;
+    white-space: nowrap !important;
+  }
+
+  /* Exact positions for the 8 skill badges surrounding your face */
+  .image-circle-container > div:nth-child(2) { top: 0px !important; left: 122px !important; }      /* Top Center */
+  .image-circle-container > div:nth-child(3) { top: 35px !important; right: 15px !important; }     /* Top Right */
+  .image-circle-container > div:nth-child(4) { top: 122px !important; right: 0px !important; }     /* Center Right */
+  .image-circle-container > div:nth-child(5) { bottom: 35px !important; right: 15px !important; }  /* Bottom Right */
+  .image-circle-container > div:nth-child(6) { bottom: 0px !important; left: 122px !important; }   /* Bottom Center */
+  .image-circle-container > div:nth-child(7) { bottom: 35px !important; left: 15px !important; }   /* Bottom Left */
+  .image-circle-container > div:nth-child(8) { top: 122px !important; left: 0px !important; }      /* Center Left */
+  .image-circle-container > div:nth-child(9) { top: 35px !important; left: 15px !important; }      /* Top Left */
+
+
+  /* 5. POSITION SOCIAL LOGOS: Anchor LinkedIn & Instagram to the bottom right corner exactly */
+  .socials-container, div[class*="social"], .social-icon {
+    position: fixed !important;
+    bottom: 20px !important;
+    right: 20px !important;
+    left: auto !important;
+    top: auto !important;
+    display: flex !important;
+    flex-direction: row !important;
+    gap: 12px !important;
+    z-index: 9999 !important;
+    margin: 0 !important;
+    width: auto !important;
+    height: auto !important;
+    transform: none !important;
+  }
+
+  /* Fix size and look of the sticky social icons */
+  a[href*="instagram"], a[href*="linkedin"], .socials-container a {
+    position: relative !important;
+    display: inline-block !important;
+    margin: 0 !important;
     top: auto !important;
     left: auto !important;
-    transform: none !important;
-    width: 90px !important;
-    height: 90px !important;
-    object-fit: contain !important;
+    width: 40px !important;
+    height: 40px !important;
   }
 
-  /* 5. Highlight your profile image perfectly in the center block */
-  img[src*="profile"] {
-    width: 150px !important;
-    height: 150px !important;
-    border-radius: 50% !important;
-    border: 3px solid #0056b3 !important;
-    object-fit: cover !important;
+  a[href*="instagram"] img, a[href*="linkedin"] img, .socials-container img {
+    width: 40px !important;
+    height: 40px !important;
+    position: static !important;
+    margin: 0 !important;
   }
-
-  /* Center the 'Know More About Me' button neatly */
-  a.btn, button, [class*="button"] {
-    display: inline-block !important;
-    margin: 20px auto !important;
-    position: relative !important;
+  
+  /* Hide the text labels next to social icons so they stay neatly in the corner */
+  a[href*="instagram"] p, a[href*="linkedin"] p, .socials-container span {
+    display: none !important;
   }
 }
+
+
