@@ -707,7 +707,7 @@ body {
                 text-align: center !important;
                 padding: 35px 24px !important; /* More padding inside the box */
                 margin: 25px auto !important;
-                width: 94% !important; /* Spreads the card wider across the mobile screen */
+                width: 100% !important; /* Spreads the card wider across the mobile screen */
                 box-sizing: border-box !important;
                 border-radius: 24px !important;
             }
