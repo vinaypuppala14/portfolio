@@ -542,9 +542,6 @@ body {
   .socials-container, div[class*="social"], .social-icon {
     bottom: 20px !important;
     right: 20px !important;
-    left: auto !important;
-    top: auto !important;
-    display: flex !important;
     flex-direction: row !important;
     gap: 12px !important;
     z-index: 9999 !important;
