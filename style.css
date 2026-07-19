@@ -447,85 +447,88 @@ body {
 
 
 
-/* COMPLETE MOBILE RESPONSIVE FIX */
+/* CLEAN MOBILE RESPONSIVE SYSTEM */
 @media screen and (max-width: 768px) {
   
-  /* 1. Reset any restrictive containers */
+  /* 1. Center the page layout naturally */
   body, main, section, .hero-container, .main-layout {
     display: flex !important;
     flex-direction: column !important;
     align-items: center !important;
-    justify-content: center !important;
+    justify-content: flex-start !important;
     text-align: center !important;
     width: 100% !important;
     max-width: 100% !important;
-    padding: 15px !important;
+    padding: 20px !important;
+    margin: 0 !important;
     box-sizing: border-box !important;
     position: static !important;
+    overflow-x: hidden !important;
   }
 
-  /* 2. Force the text content column to take full center width */
-  .hero-text, .content-left, div[class*="text"], div[class*="content"] {
-    width: 100% !important;
-    max-width: 100% !important;
-    text-align: center !important;
-    float: none !important;
-    padding: 0 !important;
-    margin: 0 auto !important;
-  }
-
-  /* 3. Center and resize headings so they don't clip */
+  /* 2. Format the heading fonts so they don't break lines awkwardly */
   h1, h2, .hero-title {
-    font-size: 2.2rem !important;
-    line-height: 1.2 !important;
-    margin: 10px auto !important;
+    font-size: 2rem !important;
+    line-height: 1.3 !important;
+    margin: 15px auto !important;
     width: 100% !important;
   }
 
-  /* 4. Center your bio paragraph text completely */
-  p, .description {
-    width: 95% !important;
-    max-width: 600px !important;
+  /* 3. Center the paragraph copy beautifully */
+  p, .description, div[class*="text"] p {
+    width: 100% !important;
+    max-width: 500px !important;
     margin: 15px auto !important;
-    font-size: 1.05rem !important;
+    font-size: 1rem !important;
     line-height: 1.6 !important;
     text-align: center !important;
+    position: relative !important;
   }
 
-  /* 5. Force the image grid/container to stack neatly below the text */
-  .image-circle-container, .profile-wrapper, div[class*="image"], div[class*="right"] {
-    position: relative !important;
+  /* 4. Hide chaotic overlapping floating element boxes */
+  .image-circle-container, [class*="circle-container"], [class*="floating-bg"] {
+    display: none !important;
+  }
+
+  /* 5. Build a clean, organized gallery grid for your images beneath the text */
+  div[class*="content-right"], div[class*="image-section"], .image-wrapper {
     display: flex !important;
     flex-direction: column !important;
     align-items: center !important;
-    justify-content: center !important;
     width: 100% !important;
-    max-width: 100% !important;
+    margin-top: 30px !important;
+    position: relative !important;
+  }
+
+  /* 6. Standardize all images so they stack nicely without overlapping */
+  img {
+    position: relative !important;
+    display: block !important;
+    margin: 15px auto !important;
+    transform: none !important;
     top: auto !important;
     left: auto !important;
     right: auto !important;
     bottom: auto !important;
-    transform: none !important;
-    margin-top: 30px !important;
+    width: 90% !important;
+    max-width: 280px !important;
+    height: auto !important;
+    border-radius: 8px !important;
   }
 
-  /* 6. Neatly stack your profile image and skill badges in the center */
-  img, svg, .circle, [class*="avatar"] {
-    position: relative !important;
-    display: block !important;
-    margin: 20px auto !important;
-    top: auto !important;
-    left: auto !important;
-    right: auto !important;
-    transform: none !important;
-    width: 150px !important;
-    height: 150px !important;
-    box-sizing: border-box !important;
+  /* 7. Keep your round profile picture perfectly circular */
+  img[src*="profile"] {
+    width: 160px !important;
+    height: 160px !important;
+    border-radius: 50% !important;
+    border: 3px solid #0056b3 !important;
   }
 
-  /* Keep your main action button centered */
+  /* 8. Make sure the 'Know More' action button sits cleanly at the center */
   a.btn, button, [class*="button"] {
-    margin: 20px auto !important;
     display: inline-block !important;
+    margin: 25px auto !important;
+    width: auto !important;
+    min-width: 200px !important;
   }
 }
