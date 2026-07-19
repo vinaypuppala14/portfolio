@@ -538,17 +538,32 @@ body {
   .image-circle-container > div:nth-child(9) { top: 35px !important; left: 15px !important; }      /* Top Left */
 
 
-  /* 5. POSITION SOCIAL LOGOS: Anchor LinkedIn & Instagram to the bottom right corner exactly */
-  .socials-container, div[class*="social"], .social-icon {
+ /* Stick social links permanently to the bottom right corner */
+  a[href*="instagram"], a[href*="linkedin"], .socials, div[class*="social"] {
+    position: fixed !important;
     bottom: 20px !important;
     right: 20px !important;
+    left: auto !important;
+    top: auto !important;
+    transform: none !important;
+    display: flex !important;
     flex-direction: row !important;
     gap: 12px !important;
-    z-index: 9999 !important;
-    margin: 0 !important;
+    z-index: 99999 !important;
     width: auto !important;
     height: auto !important;
-    transform: none !important;
+    margin: 0 !important;
   }
 
-
+  /* Force logos to stay small and neat */
+  a[href*="instagram"] img, a[href*="linkedin"] img, div[class*="social"] img {
+    width: 35px !important;
+    height: 35px !important;
+    position: static !important;
+    margin: 0 !important;
+  }
+  
+  /* Hide text labels completely */
+  a[href*="instagram"] p, a[href*="linkedin"] p, a[href*="instagram"] span, a[href*="linkedin"] span {
+    display: none !important;
+  }
