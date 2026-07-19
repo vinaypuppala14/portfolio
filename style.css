@@ -610,10 +610,10 @@ body {
   span[class*="icon"] img,
   .card-container img,
   .card img {
-    width: 48px !important;   
-    height: 48px !important;  
-    max-width: 48px !important;
-    max-height: 48px !important;
+    width: 60px !important;   
+    height: 60px !important;  
+    max-width: 60px !important;
+    max-height: 60px !important;
     object-fit: contain !important;
     display: block !important;
     margin: auto !important;
