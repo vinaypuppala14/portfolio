@@ -604,14 +604,22 @@ body {
     height: 60px !important;
   }
 
-div[class*="badge"] img, span[class*="icon"] img, .card div:first-child img {
-    width: 52px !important;   
-    height: 52px !important;  
+/* FORCE IMAGE INSIDE THE BADGE TO SCALE UP */
+  .card div:first-child img, 
+  div[class*="badge"] img, 
+  span[class*="icon"] img,
+  .card-container img,
+  .card img {
+    width: 48px !important;   
+    height: 48px !important;  
+    max-width: 48px !important;
+    max-height: 48px !important;
     object-fit: contain !important;
     display: block !important;
     margin: auto !important;
   }
 
+    
   /* Fixes headings so they stay readable and unblocked */
   .card h2, .card h3, [class*="card-title"] {
     position: relative !important;
