@@ -538,24 +538,25 @@ body {
   .image-circle-container > div:nth-child(9) { top: 35px !important; left: 15px !important; }      /* Top Left */
 
 
- /* Stick social links permanently to the bottom right corner */
+/* Move social links naturally to the bottom right corner of the content */
   a[href*="instagram"], a[href*="linkedin"], .socials, div[class*="social"] {
-    position: fixed !important;
-    bottom: 20px !important;
-    right: 20px !important;
-    left: auto !important;
-    top: auto !important;
-    transform: none !important;
+    position: relative !important;
     display: flex !important;
     flex-direction: row !important;
+    justify-content: flex-end !important;
+    align-items: center !important;
     gap: 12px !important;
-    z-index: 99999 !important;
-    width: auto !important;
+    margin: 30px 20px 10px auto !important; /* Pushes it to the right side */
+    width: fit-content !important;
     height: auto !important;
-    margin: 0 !important;
+    left: auto !important;
+    top: auto !important;
+    right: auto !important;
+    bottom: auto !important;
+    transform: none !important;
   }
 
-  /* Force logos to stay small and neat */
+  /* Keep the icons correctly sized */
   a[href*="instagram"] img, a[href*="linkedin"] img, div[class*="social"] img {
     width: 35px !important;
     height: 35px !important;
@@ -563,7 +564,7 @@ body {
     margin: 0 !important;
   }
   
-  /* Hide text labels completely */
+  /* Hide text labels completely so only the icons show */
   a[href*="instagram"] p, a[href*="linkedin"] p, a[href*="instagram"] span, a[href*="linkedin"] span {
     display: none !important;
   }
