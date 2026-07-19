@@ -558,8 +558,8 @@ body {
 
   /* Keep the icons correctly sized */
   a[href*="instagram"] img, a[href*="linkedin"] img, div[class*="social"] img {
-    width: 35px !important;
-    height: 35px !important;
+    width: 45px !important;
+    height: 45px !important;
     position: static !important;
     margin: 0 !important;
   }
