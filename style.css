@@ -447,133 +447,91 @@ body {
 
 
 
-/* TOTAL MOBILE RESPONSIVE FIX */
+
+/* GLOBAL RESPONSIVE FIX FOR ALL PAGES */
 @media screen and (max-width: 768px) {
   
-  /* 1. Reset main containers to keep items centered */
-  body, main, section, .hero-container, .main-layout {
-    display: flex !important;
-    flex-direction: column !important;
-    align-items: center !important;
-    justify-content: flex-start !important;
-    text-align: center !important;
-    width: 100% !important;
-    max-width: 100% !important;
-    padding: 15px !important;
-    margin: 0 !important;
-    box-sizing: border-box !important;
-    position: static !important;
-  }
-
-  /* 2. Re-stabilize the core circle layout frame */
-  .image-circle-container, .profile-wrapper, div[class*="image"], div[class*="right"] {
-    position: relative !important;
-    display: block !important;
-    width: 320px !important;
-    height: 320px !important;
-    margin: 40px auto !important;
-    left: auto !important;
-    top: auto !important;
-    right: auto !important;
-    transform: none !important;
-  }
-
-  /* 3. CENTER PROFILE PICTURE: Perfectly centered in the middle of the circle cluster */
-  .image-circle-container > img:first-child, 
-  .profile-wrapper > img[src*="profile"], 
-  img[src*="profile"] {
-    position: absolute !important;
-    width: 120px !important;
-    height: 120px !important;
-    left: 50% !important;
-    top: 50% !important;
-    transform: translate(-50%, -50%) !important;
-    border-radius: 50% !important;
-    border: 3px solid #0056b3 !important;
-    z-index: 5 !important;
-    margin: 0 !important;
-  }
-
-  /* 4. RE-POSITION SKILL BADGES: Cleanly distribute them symmetrically around your face */
-  .image-circle-container > div, .circle, [class*="badge"] {
-    position: absolute !important;
-    width: 75px !important;
-    height: auto !important;
-    margin: 0 !important;
-    transform: none !important;
-    display: flex !important;
-    flex-direction: column !important;
-    align-items: center !important;
-  }
-
-  /* Resize the small inner illustrations so they match the layout dimensions */
-  .image-circle-container > div img, .circle img, [class*="badge"] img {
-    width: 50px !important;
-    height: 50px !important;
-    object-fit: contain !important;
-    position: relative !important;
-    left: auto !important;
-    top: auto !important;
-    margin: 0 auto !important;
-  }
-
-  .image-circle-container > div p, .circle span, [class*="badge"] p {
-    font-size: 0.65rem !important;
-    margin-top: 2px !important;
-    line-height: 1 !important;
-    white-space: nowrap !important;
-  }
-
-  /* Exact positions for the 8 skill badges surrounding your face */
-  .image-circle-container > div:nth-child(2) { top: 0px !important; left: 122px !important; }      /* Top Center */
-  .image-circle-container > div:nth-child(3) { top: 35px !important; right: 15px !important; }     /* Top Right */
-  .image-circle-container > div:nth-child(4) { top: 122px !important; right: 0px !important; }     /* Center Right */
-  .image-circle-container > div:nth-child(5) { bottom: 35px !important; right: 15px !important; }  /* Bottom Right */
-  .image-circle-container > div:nth-child(6) { bottom: 0px !important; left: 122px !important; }   /* Bottom Center */
-  .image-circle-container > div:nth-child(7) { bottom: 35px !important; left: 15px !important; }   /* Bottom Left */
-  .image-circle-container > div:nth-child(8) { top: 122px !important; left: 0px !important; }      /* Center Left */
-  .image-circle-container > div:nth-child(9) { top: 35px !important; left: 15px !important; }      /* Top Left */
-
-
-  /* 5. POSITION SOCIAL LOGOS: Anchor LinkedIn & Instagram to the bottom right corner exactly */
-  .socials-container, div[class*="social"], .social-icon {
+  /* 1. FIXED SOCIAL LOGOS: Fixes Instagram & LinkedIn stuck in the bottom-right corner */
+  a[href*="instagram"], a[href*="linkedin"], .socials, div[class*="social"] {
     position: fixed !important;
     bottom: 20px !important;
     right: 20px !important;
     left: auto !important;
     top: auto !important;
+    transform: none !important;
     display: flex !important;
     flex-direction: row !important;
-    gap: 12px !important;
-    z-index: 9999 !important;
-    margin: 0 !important;
+    gap: 10px !important;
+    z-index: 99999 !important;
     width: auto !important;
     height: auto !important;
-    transform: none !important;
+    margin: 0 !important;
   }
 
-  /* Fix size and look of the sticky social icons */
-  a[href*="instagram"], a[href*="linkedin"], .socials-container a {
-    position: relative !important;
-    display: inline-block !important;
-    margin: 0 !important;
-    top: auto !important;
-    left: auto !important;
-    width: 40px !important;
-    height: 40px !important;
-  }
-
-  a[href*="instagram"] img, a[href*="linkedin"] img, .socials-container img {
-    width: 40px !important;
-    height: 40px !important;
-    position: static !important;
-    margin: 0 !important;
+  a[href*="instagram"] img, a[href*="linkedin"] img {
+    width: 35px !important;
+    height: 35px !important;
   }
   
-  /* Hide the text labels next to social icons so they stay neatly in the corner */
-  a[href*="instagram"] p, a[href*="linkedin"] p, .socials-container span {
+  /* Hide text labels next to social icons to prevent clutter */
+  a[href*="instagram"] p, a[href*="linkedin"] p, a[href*="instagram"] span, a[href*="linkedin"] span {
     display: none !important;
   }
+
+  /* 2. REMOVE GAPS & SET TEXT ALIGNMENT: Changes justified text to clean, natural left alignment */
+  p, .description, main p, section p, .card p {
+    text-align: left !important;
+    text-justify: none !important;
+    word-spacing: normal !important;
+    letter-spacing: normal !important;
+    line-height: 1.6 !important;
+    font-size: 1rem !important;
+    width: 100% !important;
+    box-sizing: border-box !important;
+  }
+
+  /* 3. ALIGN HEADINGS AND SYMBOLS: Prevent badges from overlapping titles */
+  .card-header, div[class*="title-wrapper"], [class*="heading"] {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: flex-start !important;
+    text-align: left !important;
+    position: relative !important;
+    width: 100% !important;
+  }
+
+  /* Force the icon badges (rocket, leaf, lightbulb) to sit cleanly on top or left, not stacked behind text */
+  div[class*="badge"], span[class*="icon"], .hero-container img:not([src*="profile"]) {
+    position: relative !important;
+    display: inline-block !important;
+    left: 0 !important;
+    top: 0 !important;
+    transform: none !important;
+    margin: 10px 0 !important;
+    width: auto !important;
+    height: auto !important;
+  }
+
+  h1, h2, h3, .card h2 {
+    text-align: left !important;
+    position: relative !important;
+    margin: 5px 0 !important;
+    left: 0 !important;
+    top: 0 !important;
+    transform: none !important;
+    width: 100% !important;
+    font-size: 1.8rem !important;
+  }
+  
+  /* 4. CLEAN CARD STRUCTURES: Makes the container layouts responsive */
+  .card, section, .main-layout {
+    padding: 20px !important;
+    margin: 15px auto !important;
+    width: 92% !important;
+    max-width: 100% !important;
+    box-sizing: border-box !important;
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: flex-start !important;
+  }
 }
-
-
