@@ -447,10 +447,10 @@ body {
 
 
 
-/* CLEAN MOBILE RESPONSIVE SYSTEM */
+/* FINAL COMPLETE MOBILE RESPONSIVE FIX */
 @media screen and (max-width: 768px) {
   
-  /* 1. Center the page layout naturally */
+  /* 1. Reset the global structure to stack neatly */
   body, main, section, .hero-container, .main-layout {
     display: flex !important;
     flex-direction: column !important;
@@ -459,76 +459,115 @@ body {
     text-align: center !important;
     width: 100% !important;
     max-width: 100% !important;
-    padding: 20px !important;
+    padding: 15px !important;
     margin: 0 !important;
     box-sizing: border-box !important;
     position: static !important;
-    overflow-x: hidden !important;
   }
 
-  /* 2. Format the heading fonts so they don't break lines awkwardly */
+  /* 2. Format the layout text areas */
   h1, h2, .hero-title {
-    font-size: 2rem !important;
-    line-height: 1.3 !important;
-    margin: 15px auto !important;
-    width: 100% !important;
+    font-size: 2.2rem !important;
+    line-height: 1.2 !important;
+    margin: 10px auto !important;
   }
 
-  /* 3. Center the paragraph copy beautifully */
-  p, .description, div[class*="text"] p {
+  p, .description {
     width: 100% !important;
-    max-width: 500px !important;
+    max-width: 90% !important;
     margin: 15px auto !important;
-    font-size: 1rem !important;
+    font-size: 1.05rem !important;
     line-height: 1.6 !important;
     text-align: center !important;
     position: relative !important;
   }
 
-  /* 4. Hide chaotic overlapping floating element boxes */
-  .image-circle-container, [class*="circle-container"], [class*="floating-bg"] {
-    display: none !important;
-  }
-
-  /* 5. Build a clean, organized gallery grid for your images beneath the text */
-  div[class*="content-right"], div[class*="image-section"], .image-wrapper {
-    display: flex !important;
-    flex-direction: column !important;
-    align-items: center !important;
-    width: 100% !important;
-    margin-top: 30px !important;
+  /* 3. FIX SOCIAL ICONS: Remove them from text, position them cleanly */
+  a[href*="instagram"], a[href*="linkedin"], .social-icon, .socials {
     position: relative !important;
-  }
-
-  /* 6. Standardize all images so they stack nicely without overlapping */
-  img {
-    position: relative !important;
-    display: block !important;
-    margin: 15px auto !important;
-    transform: none !important;
+    display: inline-block !important;
     top: auto !important;
     left: auto !important;
     right: auto !important;
     bottom: auto !important;
-    width: 90% !important;
-    max-width: 280px !important;
-    height: auto !important;
-    border-radius: 8px !important;
+    transform: none !important;
+    margin: 15px 10px !important;
+    z-index: 10 !important;
   }
 
-  /* 7. Keep your round profile picture perfectly circular */
+  /* Container wrapper to move social icons down below the button/text */
+  .socials-container, div[class*="social"] {
+    position: relative !important;
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+    width: 100% !important;
+    margin-top: 10px !important;
+    top: auto !important;
+    left: auto !important;
+  }
+
+  /* 4. FIX IMAGES AND SKILL BADGES: Clean, spaced-out grid structure */
+  .image-circle-container, .profile-wrapper, div[class*="image"], div[class*="right"] {
+    position: relative !important;
+    display: flex !important;
+    flex-wrap: wrap !important;
+    flex-direction: row !important;
+    justify-content: center !important;
+    align-items: center !important;
+    gap: 20px !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    top: auto !important;
+    left: auto !important;
+    right: auto !important;
+    transform: none !important;
+    margin: 30px auto !important;
+    height: auto !important;
+  }
+
+  /* Force all floating item elements into a regular grid flow */
+  .image-circle-container > div, .circle, [class*="badge"] {
+    position: relative !important;
+    top: auto !important;
+    left: auto !important;
+    right: auto !important;
+    bottom: auto !important;
+    transform: none !important;
+    margin: 10px !important;
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    width: 110px !important; /* Perfect square boundaries for skills */
+    height: auto !important;
+  }
+
+  /* Keep all images inside the grid perfectly sized and structured */
+  img, svg {
+    position: relative !important;
+    display: block !important;
+    margin: 0 auto 5px auto !important;
+    top: auto !important;
+    left: auto !important;
+    transform: none !important;
+    width: 90px !important;
+    height: 90px !important;
+    object-fit: contain !important;
+  }
+
+  /* 5. Highlight your profile image perfectly in the center block */
   img[src*="profile"] {
-    width: 160px !important;
-    height: 160px !important;
+    width: 150px !important;
+    height: 150px !important;
     border-radius: 50% !important;
     border: 3px solid #0056b3 !important;
+    object-fit: cover !important;
   }
 
-  /* 8. Make sure the 'Know More' action button sits cleanly at the center */
+  /* Center the 'Know More About Me' button neatly */
   a.btn, button, [class*="button"] {
     display: inline-block !important;
-    margin: 25px auto !important;
-    width: auto !important;
-    min-width: 200px !important;
+    margin: 20px auto !important;
+    position: relative !important;
   }
 }
