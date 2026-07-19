@@ -453,11 +453,11 @@ body {
 
 
 /* ==========================================================================
-   HOME PAGE ONLY - MOBILE RESPONSIVE FIX (PERFECT SPACING)
+   HOME PAGE ONLY - MOBILE RESPONSIVE FIX (PERFECT ALIGNMENT & SIZES)
    ========================================================================== */
 @media screen and (max-width: 768px) {
   
-  /* Give the main introduction text proper readable width */
+  /* 1. Reset main containers to give layout proper breathing room */
   body, main, .hero-container, .main-layout {
     display: flex !important;
     flex-direction: column !important;
@@ -471,51 +471,45 @@ body {
     box-sizing: border-box !important;
   }
 
-  /* Fixes the text squeezing - allows paragraphs to expand beautifully */
+  /* 2. Fix paragraph text alignment (Stops it from being squeezed narrow) */
   .hero-container h1, .hero-container h2, .hero-container p, .main-layout p {
     width: 92% !important;
     max-width: 500px !important;
-    margin: 10px auto !important;
+    margin: 12px auto !important;
     line-height: 1.6 !important;
     font-size: 1.05rem !important;
   }
 
-  .hero-container h2 {
-    font-size: 1.5rem !important;
-    font-weight: bold !important;
-  }
-
-  /* EXPAND THE CORE CIRCLE LAYOUT FRAME */
+  /* 3. Widen the core circle layout framework so items can spread out */
   .image-circle-container {
     position: relative !important;
     display: block !important;
-    width: 350px !important; /* Expanded framework to stop clustering */
-    height: 350px !important;
+    width: 360px !important; 
+    height: 360px !important;
     margin: 50px auto !important;
     box-sizing: border-box !important;
   }
 
-  /* PERFECTLY CENTERED MAIN PROFILE PICTURE */
+  /* 4. Perfect sizing and depth for the centered profile picture */
   .image-circle-container > img:first-child,
   img[src*="profile"] {
     position: absolute !important;
-    width: 110px !important; /* Tailored size so face isn't covered */
+    width: 110px !important; 
     height: 110px !important;
     left: 50% !important;
     top: 50% !important;
     transform: translate(-50%, -50%) !important;
     border-radius: 50% !important;
     border: 3px solid #0056b3 !important;
-    z-index: 10 !important;
+    z-index: 10 !important; /* Forces it over the clashing badges */
     margin: 0 !important;
-    box-shadow: 0px 4px 10px rgba(0,0,0,0.15);
   }
 
-  /* STABILIZE SKILL BADGE CONTAINERS */
+  /* 5. Clean layout frames for the 8 skill badges */
   .image-circle-container > div {
     position: absolute !important;
-    width: 70px !important;
-    height: 70px !important;
+    width: 75px !important;
+    height: 75px !important;
     margin: 0 !important;
     display: flex !important;
     flex-direction: column !important;
@@ -524,7 +518,7 @@ body {
     z-index: 5 !important;
   }
 
-  /* Clean sizing for inner illustrations */
+  /* Correctly sizing the small inner skill illustration images */
   .image-circle-container > div img {
     width: 42px !important;
     height: 42px !important;
@@ -533,7 +527,7 @@ body {
     display: block !important;
   }
 
-  /* Skill titles under icons */
+  /* Format skill texts neatly underneath their icons */
   .image-circle-container > div p {
     font-size: 0.62rem !important;
     font-weight: bold !important;
@@ -543,17 +537,17 @@ body {
     text-align: center !important;
   }
 
-  /* WIDER COMPASS POSITIONS (Spreads items out cleanly around your face) */
-  .image-circle-container > div:nth-child(2) { top: 0px !important; left: 140px !important; }      /* Top Center */
+  /* 6. Spreads the skill badges out wide so they clear your face completely */
+  .image-circle-container > div:nth-child(2) { top: 0px !important; left: 142px !important; }      /* Top Center */
   .image-circle-container > div:nth-child(3) { top: 40px !important; right: 35px !important; }     /* Top Right */
-  .image-circle-container > div:nth-child(4) { top: 140px !important; right: 0px !important; }     /* Center Right */
+  .image-circle-container > div:nth-child(4) { top: 142px !important; right: 0px !important; }     /* Center Right */
   .image-circle-container > div:nth-child(5) { bottom: 40px !important; right: 35px !important; }  /* Bottom Right */
-  .image-circle-container > div:nth-child(6) { bottom: 0px !important; left: 140px !important; }   /* Bottom Center */
+  .image-circle-container > div:nth-child(6) { bottom: 0px !important; left: 142px !important; }   /* Bottom Center */
   .image-circle-container > div:nth-child(7) { bottom: 40px !important; left: 35px !important; }   /* Bottom Left */
-  .image-circle-container > div:nth-child(8) { top: 140px !important; left: 0px !important; }      /* Center Left */
+  .image-circle-container > div:nth-child(8) { top: 142px !important; left: 0px !important; }      /* Center Left */
   .image-circle-container > div:nth-child(9) { top: 40px !important; left: 35px !important; }      /* Top Left */
 
-  /* Right-Down Side Social Placement */
+  /* 7. Bottom-Right Side Social Placement (Content flow alignment) */
   .socials, div[class*="social"] {
     position: relative !important;
     display: flex !important;
