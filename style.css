@@ -554,15 +554,4 @@ body {
     transform: none !important;
   }
 
-  a[href*="instagram"] img, a[href*="linkedin"] img, .socials-container img {
-    width: 40px !important;
-    height: 40px !important;
-    position: static !important;
-    margin: 0 !important;
-  }
-  
-  /* Hide the text labels next to social icons so they stay neatly in the corner */
-  a[href*="instagram"] p, a[href*="linkedin"] p, .socials-container span {
-    display: none !important;
-  }
-}
+
