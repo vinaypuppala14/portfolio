@@ -600,8 +600,16 @@ body {
     bottom: auto !important;
     transform: none !important;
     margin: 0 auto 15px auto !important; /* Puts clean spacing under the symbol */
-    width: 70px !important;
-    height: 70px !important;
+    width: 60px !important;
+    height: 60px !important;
+  }
+
+div[class*="badge"] img, span[class*="icon"] img, .card div:first-child img {
+    width: 45px !important;   
+    height: 45px !important;  
+    object-fit: contain !important;
+    display: block !important;
+    margin: auto !important;
   }
 
   /* Fixes headings so they stay readable and unblocked */
