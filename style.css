@@ -558,8 +558,8 @@ body {
 
   /* Keep the icons correctly sized */
   a[href*="instagram"] img, a[href*="linkedin"] img, div[class*="social"] img {
-    width: 45px !important;
-    height: 45px !important;
+    width: 90px !important;
+    height: 90px !important;
     position: static !important;
     margin: 0 !important;
   }
@@ -567,4 +567,65 @@ body {
   /* Hide text labels completely so only the icons show */
   a[href*="instagram"] p, a[href*="linkedin"] p, a[href*="instagram"] span, a[href*="linkedin"] span {
     display: none !important;
+  }
+
+
+
+
+
+
+
+    /* --- BACKGROUND PAGE MOBLE VIEW FIX --- */
+
+  /* Fixes the card wrappers to align everything nicely */
+  .card, [class*="card-container"], [class*="story-box"] {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important; /* Centers layout content column */
+    justify-content: flex-start !important;
+    text-align: center !important;
+    padding: 25px 20px !important;
+    margin: 20px auto !important;
+    width: 90% !important;
+    box-sizing: border-box !important;
+  }
+
+  /* UNTANGLE THE SYMBOLS: Moves the leaf/house badge above the headings */
+  div[class*="badge"], span[class*="icon"], .card img, .card div:first-child {
+    position: relative !important;
+    display: inline-block !important;
+    top: auto !important;
+    left: auto !important;
+    right: auto !important;
+    bottom: auto !important;
+    transform: none !important;
+    margin: 0 auto 15px auto !important; /* Puts clean spacing under the symbol */
+    width: auto !important;
+    height: auto !important;
+  }
+
+  /* Fixes headings so they stay readable and unblocked */
+  .card h2, .card h3, [class*="card-title"] {
+    position: relative !important;
+    display: block !important;
+    width: 100% !important;
+    text-align: center !important;
+    font-size: 1.6rem !important;
+    line-height: 1.3 !important;
+    margin: 0 auto 15px auto !important;
+    top: auto !important;
+    left: auto !important;
+    transform: none !important;
+  }
+
+  /* Fixes paragraph layout and removes messy gaps between sentences */
+  .card p, [class*="card-text"] {
+    text-align: center !important; /* Centers the story text text naturally */
+    text-justify: none !important;
+    word-spacing: normal !important;
+    letter-spacing: normal !important;
+    line-height: 1.6 !important;
+    font-size: 1rem !important;
+    margin: 0 auto !important;
+    width: 100% !important;
   }
